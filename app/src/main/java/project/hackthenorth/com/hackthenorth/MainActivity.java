@@ -7,7 +7,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.Context;
 
+
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,7 +92,22 @@ public class MainActivity extends AppCompatActivity {
                     int restTime = Integer.valueOf(inputRestTime.getText().toString());
                     restTime= restTime-1;
                     inputRestTime.setText(Integer.toString(restTime));
+
                 }
+            }
+        });
+
+        Button startWorkout = (Button) findViewById(R.id.button2);
+        startWorkout.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Workout.class);
+                intent.putExtra("Workout", inputWorkOutTime.getText().toString());
+
+                intent.putExtra("Rest", inputRestTime.getText().toString());
+
+                startActivity(intent);
             }
         });
     }
