@@ -119,4 +119,14 @@
         android:layout_alignLeft="@+id/plusButtonForRest"
         android:layout_alignStart="@+id/plusButtonForRest" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_marginBottom="34dp"
+        android:text="Start Workout" />
+
 </RelativeLayout>
