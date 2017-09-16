@@ -1,5 +1,6 @@
 package project.hackthenorth.com.hackthenorth;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.content.Context;
 
 
 import java.sql.SQLOutput;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,22 +95,7 @@ public class MainActivity extends AppCompatActivity {
                     int restTime = Integer.valueOf(inputRestTime.getText().toString());
                     restTime= restTime-1;
                     inputRestTime.setText(Integer.toString(restTime));
-
                 }
-            }
-        });
-
-        Button startWorkout = (Button) findViewById(R.id.button2);
-        startWorkout.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Workout.class);
-                intent.putExtra("Workout", inputWorkOutTime.getText().toString());
-
-                intent.putExtra("Rest", inputRestTime.getText().toString());
-
-                startActivity(intent);
             }
         });
     }

@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Hack the North</string>
-    <string name="Register">Register</string>
-    <string name="Login">Login</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="SignIn">Sign In</string>
+    <string name="SignOut">Sign Out</string>
     <string name="Email">Email</string>
     <string name="Password">Password</string>
 </resources>
