@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    android:paddingTop="20dp"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp"
+    tools:context="project.hackthenorth.com.hackthenorth.register">
+
+    <EditText
+        android:id = "@+id/passwordRegister"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:inputType = "textPassword"
+        android:hint="@string/Password"
+        android:layout_below="@+id/emailRegister"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id = "@+id/emailRegister"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:inputType="text"
+        android:hint="@string/Email"
+        android:layout_marginTop="188dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordRegister"
+        android:text="@string/Register"
+        android:layout_alignParentRight="true"
+        android:onClick="createAccount"/>
+
+</RelativeLayout>
