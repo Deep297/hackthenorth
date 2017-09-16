@@ -54,6 +54,14 @@ public class register extends AppCompatActivity {
         });
     }
 
+    public void onClick(View view) {
+        //EditText
+        emailText = (EditText) findViewById(R.id.emailRegister);
+        passText = (EditText) findViewById(R.id.passwordRegister);
+
+
+    }
+
     private boolean validateForm () {
         //Validates form and sets error if incorrect
         boolean valid = true;
