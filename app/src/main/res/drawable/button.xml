@@ -10,8 +10,3 @@
     android:endColor="#F58877"
     android:startColor="#FFA05A" />
 </shape>
-
-    #FFA05A</color>
-<color name="colorPrimaryDark">#F58877</color>
-<color name="colorAccent">#1DB183</color>
-    </resources>

@@ -27,7 +27,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     EditText inputWorkOutTime, inputRestTime, inputCycleTime;
     Button plusButtonForWorkOutTime, plusButtonForRestTime, minusButtonForWorkOutTime, minusButtonForRestTime, plusCycle, minusCycle;
-
+    int menuIndex = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,28 +45,32 @@ public class MainActivity extends AppCompatActivity {
                         switch (item.getItemId()) {
                             case R.id.menu_workout:
                                 selectedFragment = WorkoutFragment.newInstance();
+                                menuIndex = 0;
                                 break;
                             case R.id.menu_preferences:
                                 selectedFragment = PreferencesFragment.newInstance();
+                                menuIndex = 1;
                                 break;
                             case R.id.menu_analytics:
                                 selectedFragment = AnalyticsFragment.newInstance();
+                                menuIndex = 2;
                                 break;
                             case R.id.menu_settings:
                                 selectedFragment = SettingsFragment.newInstance();
+                                menuIndex = 3;
                                 break;
                         }
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_layout, selectedFragment);
-                        transaction.commit();
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.frame_layout, WorkoutFragment.newInstance());
+                            transaction.commit();
+
+
                         return true;
                     }
                 });
 
-        //Manually displaying the first fragment - one time only
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, WorkoutFragment.newInstance());
-        transaction.commit();
+
+
 
 
     }
