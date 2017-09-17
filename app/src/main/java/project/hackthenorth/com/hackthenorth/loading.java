@@ -25,21 +25,24 @@ public class loading extends AppCompatActivity{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_loading);
 
-        imageView = (ImageView)findViewById(R.id.imageView);
+       imageView = (ImageView)findViewById(R.id.imageView);
         if(imageView == null) throw new AssertionError();
         imageView.setBackgroundResource(R.drawable.animation_screen);
+        anim = (AnimationDrawable) imageView.getBackground();
+        anim.start();
 
-        new Handler().postDelayed(new Runnable(){
-            @Override
+       new Handler().postDelayed(new Runnable(){
+           @Override
             public void run() {
-                anim = (AnimationDrawable) imageView.getBackground();
-                anim.start();
+
+
                 Intent intent = new Intent(loading.this, MainActivity.class);
                 startActivity(intent);
+
             }
-            },2000);
-            }
-        }
+            },1700);
+            }}
+
 
 
 
