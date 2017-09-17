@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentActivity;
  */
 
 public class FragmentTransitionSetting extends FragmentActivity {
-    public class blueScreen extends Activity {
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -17,5 +17,5 @@ public class FragmentTransitionSetting extends FragmentActivity {
                 getSupportFragmentManager().beginTransaction()
                         .add(android.R.id.content, new SettingsFragment()).commit();}
         }
-    }
+    
 }
