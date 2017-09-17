@@ -48,15 +48,20 @@ public class MainActivity extends AppCompatActivity {
                                 menuIndex = 0;
                                 break;
                             case R.id.menu_preferences:
-                                selectedFragment = PreferencesFragment.newInstance();
+                                Intent intent = (Intent) new Intent (getApplicationContext(), FragmentTransitionPreferences.class);
+                                startActivity(intent);
                                 menuIndex = 1;
                                 break;
                             case R.id.menu_analytics:
-                                selectedFragment = AnalyticsFragment.newInstance();
+                                //selectedFragment = AnalyticsFragment.newInstance();
+                                Intent intent2 = (Intent) new Intent (getApplicationContext(), FragmentTransitionAnalysis.class);
+                                startActivity(intent2);
                                 menuIndex = 2;
                                 break;
                             case R.id.menu_settings:
                                 selectedFragment = SettingsFragment.newInstance();
+                                Intent intent3 = (Intent) new Intent (getApplicationContext(), FragmentTransitionSetting.class);
+                                startActivity(intent3);
                                 menuIndex = 3;
                                 break;
                         }

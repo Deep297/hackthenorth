@@ -13,7 +13,6 @@ import android.view.ViewGroup;
  */
 public class SettingsFragment extends Fragment {
 
-
     public static SettingsFragment newInstance() {
         SettingsFragment fragment = new SettingsFragment();
         return fragment;

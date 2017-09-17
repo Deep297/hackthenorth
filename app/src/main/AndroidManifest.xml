@@ -31,6 +31,31 @@
         </intent-filter>
         </activity>
 
+        <activity android:name=".FragmentTransitionAnalysis">
+            <intent-filter>
+                <action android:name="project.hackthenorth.com.hackthenorth.FragmentTransitionAnalysis" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".FragmentTransitionPreferences">
+            <intent-filter>
+                <action android:name="project.hackthenorth.com.hackthenorth.FragmentTransitionPreferences" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FragmentTransitionSetting">
+            <intent-filter>
+                <action android:name="project.hackthenorth.com.hackthenorth.FragmentTransitionSetting" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+
         <activity android:name=".loading">
             <intent-filter>
                 <action android:name="project.hackthenorth.com.hackthenorth.loading" />
