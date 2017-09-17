@@ -28,18 +28,21 @@ public class loading extends AppCompatActivity{
        imageView = (ImageView)findViewById(R.id.imageView);
         if(imageView == null) throw new AssertionError();
         imageView.setBackgroundResource(R.drawable.animation_screen);
+        anim = (AnimationDrawable) imageView.getBackground();
+        anim.start();
 
-        new Handler().postDelayed(new Runnable(){
-            @Override
+       new Handler().postDelayed(new Runnable(){
+           @Override
             public void run() {
-               // anim = (AnimationDrawable) imageView.getBackground();
-                //anim.start();
+
+
                 Intent intent = new Intent(loading.this, MainActivity.class);
                 startActivity(intent);
+
             }
-            },2000);
-            }
-        }
+            },1700);
+            }}
+
 
 
 
