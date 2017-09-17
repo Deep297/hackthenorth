@@ -40,7 +40,7 @@ public class AuthenticationActivity extends AppCompatActivity {
     public void updateUI (FirebaseUser user) {
         if (user != null) {
             //go to main if already signed in
-            Intent intent = new Intent(AuthenticationActivity.this, MainActivity.class);
+            Intent intent = new Intent(AuthenticationActivity.this, loading.class);
             startActivity(intent);
         }
     }
@@ -56,7 +56,7 @@ public class AuthenticationActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     //sign in successful, changes to main
-                    Intent intent = new Intent(AuthenticationActivity.this, MainActivity.class);
+                    Intent intent = new Intent(AuthenticationActivity.this, loading.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(AuthenticationActivity.this, "Authentication failed.",
@@ -76,7 +76,7 @@ public class AuthenticationActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     //Sign up successful
-                    Intent intent = new Intent(AuthenticationActivity.this, MainActivity.class);
+                    Intent intent = new Intent(AuthenticationActivity.this, loading.class);
                     startActivity(intent);
                 } else {
                     //Invalid sign up

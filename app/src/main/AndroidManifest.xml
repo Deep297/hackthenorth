@@ -33,6 +33,15 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".loading">
+        <intent-filter>
+            <action android:name="project.hackthenorth.com.hackthenorth.loading" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+
+        </activity>
+
 
         <!--<activity android:name=".register" />-->
         <!--<activity android:name=".Workout"></activity>-->
