@@ -16,12 +16,11 @@
         android:layout_height = "wrap_content"
         android:inputType = "textPassword"
         android:hint="@string/Password"
-        android:layout_below="@+id/emailLogin"
         android:background="@drawable/border"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/emailLogin"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp" />
 
     <EditText
         android:id = "@+id/emailLogin"
@@ -29,28 +28,48 @@
         android:layout_height = "wrap_content"
         android:inputType="text"
         android:hint="@string/Email"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="@drawable/border"
-        android:layout_marginTop="190dp" />
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/passwordLogin"
         android:id="@+id/signInButton"
         android:text="@string/SignIn"
-        android:layout_alignParentRight="true"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:layout_marginTop="34dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/button"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/passwordLogin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/signInButton"
         android:id="@+id/signUpButton"
         android:text="@string/SignUp"
-        android:layout_alignParentRight="true"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/signInButton"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff"/>
+
+    <ImageView
+        app:srcCompat="@drawable/icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
 
