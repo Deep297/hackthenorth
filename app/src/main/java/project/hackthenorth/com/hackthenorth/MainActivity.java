@@ -20,8 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    EditText inputWorkOutTime, inputRestTime;
-    Button plusButtonForWorkOutTime, plusButtonForRestTime, minusButtonForWorkOutTime, minusButtonForRestTime;
+    EditText inputWorkOutTime, inputRestTime, inputCycleTime;
+    Button plusButtonForWorkOutTime, plusButtonForRestTime, minusButtonForWorkOutTime, minusButtonForRestTime, plusCycle, minusCycle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +30,15 @@ public class MainActivity extends AppCompatActivity {
 
         inputWorkOutTime = (EditText)findViewById(R.id.inputWorkOutTime);
         inputRestTime = (EditText)findViewById(R.id.inputRestTime);
+        inputCycleTime = (EditText)findViewById(R.id.inputCycleTime);
 
         plusButtonForRestTime = (Button)findViewById(R.id.plusButtonForRest);
         plusButtonForWorkOutTime = (Button)findViewById(R.id.plusButtonForWorkOut);
         minusButtonForRestTime = (Button)findViewById(R.id.minusButtonForRest);
         minusButtonForWorkOutTime = (Button)findViewById(R.id.minusButtonForWorkOut);
 
-        if (inputWorkOutTime.getText().toString().equals("0")||inputRestTime.getText().toString().equals("0")){
-            Toast.makeText(MainActivity.this, "Invalid Time!", Toast.LENGTH_LONG).show();
+        if (inputWorkOutTime.getText().toString().equals("0")||inputRestTime.getText().toString().equals("0")||inputCycleTime.getText().toString().equals("0")){
+            Toast.makeText(MainActivity.this, "Invalid Time or Cycle!", Toast.LENGTH_LONG).show();
 
         }
 
@@ -106,6 +107,38 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        plusCycle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (inputCycleTime.getText().toString().equals("")||(!inputCycleTime.getText().toString().equals("")&&Integer.valueOf(inputCycleTime.getText().toString())<2)){
+                    Toast.makeText(MainActivity.this, "Invalid Cycle Number!", Toast.LENGTH_LONG).show();
+
+                }
+                else {
+                    int cycleTime = Integer.valueOf(inputCycleTime.getText().toString());
+                    cycleTime= cycleTime+1;
+                    inputCycleTime.setText(Integer.toString(cycleTime));
+                }
+            }
+        });
+
+        minusCycle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (inputCycleTime.getText().toString().equals("")||(!inputCycleTime.getText().toString().equals("")&&Integer.valueOf(inputCycleTime.getText().toString())<2)){
+                    Toast.makeText(MainActivity.this, "Invalid Cycle Number!", Toast.LENGTH_LONG).show();
+
+                }
+                else {
+                    int cycleTime = Integer.valueOf(inputCycleTime.getText().toString());
+                    cycleTime= cycleTime-1;
+                    inputCycleTime.setText(Integer.toString(cycleTime));
+                }
+            }
+        });
+
+
 
         Button startWorkout = (Button)findViewById(R.id.button2);
         startWorkout.setOnClickListener(new View.OnClickListener() {
