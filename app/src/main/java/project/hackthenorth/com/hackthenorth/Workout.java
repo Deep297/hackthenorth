@@ -43,14 +43,21 @@ public class Workout extends AppCompatActivity {
 
        begin.start();
 
-        for(int i = 0; i < Integer.valueOf(cycles); i++){
+            if (cycles.equals("")||cycles==null){
 
-            timer(x);
-            restup.start();
+            }
+            else {
+                for(int i = 0; i < Integer.valueOf(cycles); i++){
 
-            timer(y);
-            resume.start();
-        }
+                    timer(x);
+                    restup.start();
+
+                    timer(y);
+                    resume.start();
+                }
+            }
+
+
         complete.start();
             song.start();
 

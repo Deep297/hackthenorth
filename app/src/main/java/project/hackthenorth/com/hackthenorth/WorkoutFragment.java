@@ -130,6 +130,7 @@ public class WorkoutFragment extends Fragment {
 
                 intent.putExtra("Work", inputWorkOutTime.getText().toString());
                 intent.putExtra("Rest", inputRestTime.getText().toString());
+                intent.putExtra("Cycles", inputCycleTime.getText().toString());
                 startActivity(intent);
             }
         });
