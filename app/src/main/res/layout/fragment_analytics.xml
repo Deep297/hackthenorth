@@ -5,9 +5,16 @@
     tools:context="project.hackthenorth.com.hackthenorth.AnalyticsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/Analytics" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="@string/Analytics" />-->
+
+
+
+    <!--<com.jjoe64.graphview.GraphView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dip"-->
+        <!--android:id="@+id/graph" />-->
 
 </RelativeLayout>

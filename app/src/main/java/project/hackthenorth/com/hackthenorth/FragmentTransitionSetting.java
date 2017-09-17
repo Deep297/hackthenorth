@@ -17,5 +17,5 @@ public class FragmentTransitionSetting extends FragmentActivity {
                 getSupportFragmentManager().beginTransaction()
                         .add(android.R.id.content, new SettingsFragment()).commit();}
         }
-    
+
 }
