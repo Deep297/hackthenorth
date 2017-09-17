@@ -44,7 +44,6 @@ public class Workout extends AppCompatActivity {
        begin.start();
 
         for(int i = 0; i < Integer.valueOf(cycles); i++){
-            //setContentView(R.layout.activity_workout);
 
             timer(x);
             restup.start();
@@ -58,8 +57,6 @@ public class Workout extends AppCompatActivity {
         }}
 
     public void timer (int time){
-        setContentView(R.layout.activity_workout);
-
         SystemClock.sleep(time);
         return;
     }

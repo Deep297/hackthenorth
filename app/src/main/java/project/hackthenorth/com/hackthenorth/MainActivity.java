@@ -113,8 +113,11 @@ public class MainActivity extends AppCompatActivity {
         plusCycle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (inputCycleTime.getText().toString().equals("")||(!inputCycleTime.getText().toString().equals("")&&Integer.valueOf(inputCycleTime.getText().toString())<2)){
-                    Toast.makeText(MainActivity.this, "Invalid Cycle Number!", Toast.LENGTH_LONG).show();
+                if (inputCycleTime.getText().toString().equals("")){
+                    inputCycleTime.setText("0");
+                    int cycles = Integer.valueOf(inputCycleTime.getText().toString());
+                    cycles = cycles +1;
+                    inputCycleTime.setText(Integer.toString(cycles));
 
                 }
                 else {
@@ -123,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     inputCycleTime.setText(Integer.toString(cycleTime));
                 }
             }
+
         });
 
         minusCycle.setOnClickListener(new View.OnClickListener() {
