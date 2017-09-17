@@ -76,7 +76,7 @@ public class AuthenticationActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     //Sign up successful
-                    Intent intent = new Intent(AuthenticationActivity.this, MainActivity.class);
+                    Intent intent = new Intent(AuthenticationActivity.this, loading.class);
                     startActivity(intent);
                 } else {
                     //Invalid sign up

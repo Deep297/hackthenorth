@@ -1,98 +1,53 @@
 package project.hackthenorth.com.hackthenorth;
 
-import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
-    EditText inputWorkOutTime, inputRestTime;
-    Button plusButtonForWorkOutTime, plusButtonForRestTime, minusButtonForWorkOutTime, minusButtonForRestTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        inputWorkOutTime = (EditText)findViewById(R.id.inputWorkOutTime);
-        inputRestTime = (EditText)findViewById(R.id.inputRestTime);
+        //Navigation Bar
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.navigation);
 
-        plusButtonForRestTime = (Button)findViewById(R.id.plusButtonForRest);
-        plusButtonForWorkOutTime = (Button)findViewById(R.id.plusButtonForWorkOut);
-        minusButtonForRestTime = (Button)findViewById(R.id.minusButtonForRest);
-        minusButtonForWorkOutTime = (Button)findViewById(R.id.minusButtonForWorkOut);
+        bottomNavigationView.setOnNavigationItemSelectedListener
+                (new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        Fragment selectedFragment = null;
+                        switch (item.getItemId()) {
+                            case R.id.menu_workout:
+                                selectedFragment = WorkoutFragment.newInstance();
+                                break;
+                            case R.id.menu_preferences:
+                                selectedFragment = PreferencesFragment.newInstance();
+                                break;
+                            case R.id.menu_analytics:
+                                selectedFragment = AnalyticsFragment.newInstance();
+                                break;
+                            case R.id.menu_settings:
+                                selectedFragment = SettingsFragment.newInstance();
+                                break;
+                        }
+                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_layout, selectedFragment);
+                        transaction.commit();
+                        return true;
+                    }
+                });
 
-        if (inputWorkOutTime.getText().toString().equals("0")||inputRestTime.getText().toString().equals("0")){
-            Toast.makeText(MainActivity.this, "Invalid Time!", Toast.LENGTH_LONG).show();
-
-        }
-
-        plusButtonForWorkOutTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (inputWorkOutTime.getText().toString().equals("")){
-
-                }
-                else {
-                    int workOutTime = Integer.valueOf(inputWorkOutTime.getText().toString());
-                    workOutTime = workOutTime+1;
-                    inputWorkOutTime.setText(Integer.toString(workOutTime));
-                }
-            }
-        });
-
-        plusButtonForRestTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (inputRestTime.getText().toString().equals("")){
-
-                }
-                else {
-                    int restTime = Integer.valueOf(inputRestTime.getText().toString());
-                     restTime= restTime+1;
-                    inputRestTime.setText(Integer.toString(restTime));
-                }
-            }
-        });
-
-        minusButtonForWorkOutTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (inputWorkOutTime.getText().toString().equals("")||(!inputWorkOutTime.getText().toString().equals("")&&Integer.valueOf(inputWorkOutTime.getText().toString())<2)){
-                    Toast.makeText(MainActivity.this, "Invalid Time!", Toast.LENGTH_LONG).show();
-
-                }
-                else{
-                    int workOutTime = Integer.valueOf(inputWorkOutTime.getText().toString());
-                    workOutTime = workOutTime-1;
-                    inputWorkOutTime.setText(Integer.toString(workOutTime));
-                }
-            }
-        });
-
-        minusButtonForRestTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (inputRestTime.getText().toString().equals("")||(!inputRestTime.getText().toString().equals("")&&Integer.valueOf(inputRestTime.getText().toString())<2)){
-                    Toast.makeText(MainActivity.this, "Invalid Time!", Toast.LENGTH_LONG).show();
-
-                }
-                else {
-                    int restTime = Integer.valueOf(inputRestTime.getText().toString());
-                    restTime= restTime-1;
-                    inputRestTime.setText(Integer.toString(restTime));
-                }
-            }
-        });
+        //Manually displaying the first fragment - one time only
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_layout, WorkoutFragment.newInstance());
+        transaction.commit();
     }
-
 }

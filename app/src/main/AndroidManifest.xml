@@ -16,7 +16,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+
+        <activity android:name=".MainActivity">
+        <intent-filter>
+            <action android:name="project.hackthenorth.com.hackthenorth.MainActivity" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
+
+        <activity android:name=".Workout">
+            <intent-filter>
+                <action android:name="project.hackthenorth.com.hackthenorth.Workout" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".loading">
+        <intent-filter>
+            <action android:name="project.hackthenorth.com.hackthenorth.loading" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+
+        </activity>
+
+
+        <!--<activity android:name=".register" />-->
+        <!--<activity android:name=".Workout"></activity>-->
     </application>
 
 </manifest>

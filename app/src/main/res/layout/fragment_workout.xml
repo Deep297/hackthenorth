@@ -1,0 +1,184 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="project.hackthenorth.com.hackthenorth.WorkoutFragment">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seconds"
+        android:layout_alignTop="@+id/minusCycleTime"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seconds"
+        android:layout_alignBottom="@+id/inputWorkOutTime"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/workOutText"
+        android:layout_marginTop="54dp"
+        android:text="Work Out Time: "
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/restText"
+        android:text="Rest Time"
+        android:layout_marginTop="78dp"
+        android:layout_below="@+id/minusButtonForWorkOut"
+        android:layout_alignLeft="@+id/workOutText"
+        android:layout_alignStart="@+id/workOutText"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
+
+    <EditText
+        android:id="@+id/inputWorkOutTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/workOutText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/workOutText"
+        android:layout_toRightOf="@+id/workOutText"
+        android:ems="3"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/inputRestTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/restText"
+        android:layout_alignLeft="@+id/inputWorkOutTime"
+        android:layout_alignStart="@+id/inputWorkOutTime"
+        android:ems="3"
+        android:inputType="number" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seconds"
+        android:id="@+id/textView2"
+        android:layout_alignBaseline="@+id/inputRestTime"
+        android:layout_alignBottom="@+id/inputRestTime"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="+"
+        android:id="@+id/plusButtonForWorkOut"
+        android:textSize="15dp"
+        android:background="#ffffff"
+        android:layout_alignLeft="@+id/minusButtonForWorkOut"
+        android:layout_alignStart="@+id/minusButtonForWorkOut"
+        android:layout_above="@+id/minusButtonForWorkOut" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="-"
+        android:textSize="20dp"
+        android:background="#ffffff"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:id="@+id/minusButtonForWorkOut"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toRightOf="@+id/inputWorkOutTime"
+        android:layout_toEndOf="@+id/inputWorkOutTime" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/plusButtonForRest"
+        android:background="#ffffff"
+        android:textSize="15dp"
+        android:text="+"
+        android:layout_above="@+id/textView2"
+        android:layout_alignLeft="@+id/minusButtonForWorkOut"
+        android:layout_alignStart="@+id/minusButtonForWorkOut" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:id="@+id/minusButtonForRest"
+        android:text="-"
+        android:textSize="15dp"
+        android:layout_below="@+id/plusButtonForRest"
+        android:layout_alignLeft="@+id/plusButtonForRest"
+        android:layout_alignStart="@+id/plusButtonForRest" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_marginBottom="34dp"
+        android:text="Start Workout" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/plusButtonForCycle"
+        android:background="#ffffff"
+        android:text="+"
+        android:textSize="15dp"
+        android:layout_above="@+id/minusCycleTime"
+        android:layout_alignLeft="@+id/minusButtonForRest"
+        android:layout_alignStart="@+id/minusButtonForRest" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:text="-"
+        android:textSize="15dp"
+        android:layout_alignBaseline="@+id/cycleText"
+        android:layout_alignBottom="@+id/cycleText"
+        android:layout_alignLeft="@+id/plusButtonForCycle"
+        android:layout_alignStart="@+id/plusButtonForCycle"
+        android:id="@+id/minusCycleTime"
+        android:layout_alignRight="@+id/plusButtonForCycle"
+        android:layout_alignEnd="@+id/plusButtonForCycle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cycleText"
+        android:text="Cycle:"
+        android:layout_marginTop="90dp"
+        android:layout_below="@+id/minusButtonForRest"
+        android:layout_alignLeft="@+id/restText"
+        android:layout_alignStart="@+id/restText"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="3"
+        android:layout_alignBottom="@+id/cycleText"
+        android:layout_alignLeft="@+id/inputRestTime"
+        android:layout_alignStart="@+id/inputRestTime"
+        android:id="@+id/inputCycleTime" />
+
+</RelativeLayout>
