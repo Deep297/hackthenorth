@@ -45,11 +45,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (inputWorkOutTime.getText().toString().equals("")){
+                    inputWorkOutTime.setText("0");
+                    int workOutTime = Integer.valueOf(inputWorkOutTime.getText().toString());
+                    workOutTime = workOutTime+5;
+                    inputWorkOutTime.setText(Integer.toString(workOutTime));
 
                 }
                 else {
                     int workOutTime = Integer.valueOf(inputWorkOutTime.getText().toString());
-                    workOutTime = workOutTime+1;
+                    workOutTime = workOutTime+5;
                     inputWorkOutTime.setText(Integer.toString(workOutTime));
                 }
             }
@@ -59,11 +63,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (inputRestTime.getText().toString().equals("")){
+                    inputRestTime.setText("0");
+                    int restTime = Integer.valueOf(inputRestTime.getText().toString());
+                    restTime= restTime+5;
+                    inputRestTime.setText(Integer.toString(restTime));
 
                 }
                 else {
                     int restTime = Integer.valueOf(inputRestTime.getText().toString());
-                     restTime= restTime+1;
+                     restTime= restTime+5;
                     inputRestTime.setText(Integer.toString(restTime));
                 }
             }
@@ -78,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     int workOutTime = Integer.valueOf(inputWorkOutTime.getText().toString());
-                    workOutTime = workOutTime-1;
+                    workOutTime = workOutTime-5;
                     inputWorkOutTime.setText(Integer.toString(workOutTime));
                 }
             }
@@ -93,10 +101,25 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     int restTime = Integer.valueOf(inputRestTime.getText().toString());
-                    restTime= restTime-1;
+                    restTime= restTime-5;
                     inputRestTime.setText(Integer.toString(restTime));
                 }
             }
         });
+
+        Button startWorkout = (Button)findViewById(R.id.button2);
+        startWorkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Workout.class);
+
+                intent.putExtra("Work", inputWorkOutTime.getText().toString());
+                intent.putExtra("Rest", inputRestTime.getText().toString());
+                startActivity(intent);
+
+            }
+        });
+
+
     }
 }

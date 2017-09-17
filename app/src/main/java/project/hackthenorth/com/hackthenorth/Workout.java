@@ -4,6 +4,7 @@ import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.media.MediaPlayer;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -25,10 +26,13 @@ public class Workout extends AppCompatActivity {
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.hello);
         final MediaPlayer mp1 = MediaPlayer.create(this, R.raw.beep);
         Bundle bundle = getIntent().getExtras();
-        String work = bundle.getString("Workout");
+        String work = bundle.getString("Work");
         String rest = bundle.getString("Rest");
-        int x = (Integer.valueOf(work))* 1000;
-        int y = (Integer.valueOf(rest))* 1000;
+
+        if(work.equals("") || rest.equals("")){}
+        else {
+            int x = (Integer.valueOf(work)) * 1000;
+            int y = (Integer.valueOf(rest)) * 1000;
 
 
        mp.start();
@@ -40,7 +44,7 @@ public class Workout extends AppCompatActivity {
 
             timer(y);
             mp.start();
-    }}
+    }}}
 
     public void timer (int time){
 

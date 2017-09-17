@@ -9,17 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterOrLogin">
+        <activity android:name=".AuthenticationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".register" />
-        <activity android:name=".Workout"></activity>
+
+        <activity android:name=".MainActivity">
+        <intent-filter>
+            <action android:name="project.hackthenorth.com.hackthenorth.MainActivity" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
+
+        <activity android:name=".Workout">
+            <intent-filter>
+                <action android:name="project.hackthenorth.com.hackthenorth.Workout" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <!--<activity android:name=".register" />-->
+        <!--<activity android:name=".Workout"></activity>-->
     </application>
 
 </manifest>
