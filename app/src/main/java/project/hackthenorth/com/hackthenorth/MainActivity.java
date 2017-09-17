@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         plusButtonForWorkOutTime = (Button)findViewById(R.id.plusButtonForWorkOut);
         minusButtonForRestTime = (Button)findViewById(R.id.minusButtonForRest);
         minusButtonForWorkOutTime = (Button)findViewById(R.id.minusButtonForWorkOut);
+        plusCycle = (Button) findViewById(R.id.plusButtonForCycle);
+        minusCycle = (Button) findViewById(R.id.minusCycleTime);
 
         if (inputWorkOutTime.getText().toString().equals("0")||inputRestTime.getText().toString().equals("0")||inputCycleTime.getText().toString().equals("0")){
             Toast.makeText(MainActivity.this, "Invalid Time or Cycle!", Toast.LENGTH_LONG).show();
@@ -148,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
                 intent.putExtra("Work", inputWorkOutTime.getText().toString());
                 intent.putExtra("Rest", inputRestTime.getText().toString());
+                intent.putExtra("Cycles", inputCycleTime.getText().toString());
                 startActivity(intent);
 
             }

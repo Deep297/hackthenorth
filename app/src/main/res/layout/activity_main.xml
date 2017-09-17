@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Seconds"
-        android:layout_alignTop="@+id/minuCycleTime"
+        android:layout_alignTop="@+id/minusCycleTime"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView" />
 
@@ -165,7 +165,7 @@
         android:background="#ffffff"
         android:text="+"
         android:textSize="15dp"
-        android:layout_above="@+id/minuCycleTime"
+        android:layout_above="@+id/minusCycleTime"
         android:layout_alignLeft="@+id/minusButtonForRest"
         android:layout_alignStart="@+id/minusButtonForRest" />
 
@@ -179,7 +179,7 @@
         android:layout_alignBottom="@+id/cycleText"
         android:layout_alignLeft="@+id/plusButtonForCycle"
         android:layout_alignStart="@+id/plusButtonForCycle"
-        android:id="@+id/minuCycleTime"
+        android:id="@+id/minusCycleTime"
         android:layout_alignRight="@+id/plusButtonForCycle"
         android:layout_alignEnd="@+id/plusButtonForCycle" />
 
